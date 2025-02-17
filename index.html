@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contract Notices Database</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.10/dayjs.min.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        .file-link {
+            color: #0366d6;
+            text-decoration: none;
+        }
+        .file-link:hover {
+            text-decoration: underline;
+        }
+        .search-container {
+            margin-bottom: 20px;
+        }
+        #searchInput {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .description {
+            max-height: 100px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contract Notices Database</h1>
+    
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search notices...">
+    </div>
+
+    <table id="noticesTable">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Notice ID</th>
+                <th>Posted Date</th>
+                <th>Office</th>
+                <th>Description</th>
+                <th>Attachments</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+        </tbody>
+    </table>
+
+    <script>
+        const notices = [
+            {
+                "title": "Electro-Hydraulic Windlass Parts",
+                "noticeId": "fcf894730608445498f4fa42159ab90f",
+                "postedDate": "2025-02-14",
+                "office": "DEPT OF DEFENSE.DEPT OF THE NAVY.NAVSUP.NAVSUP GLOBAL LOGISTICS SUPPORT.NAVSUP FLC JACKSONVILLE",
+                "description": {"description":"<p>The Naval Supply (NAVSUP) Systems Command...</p>"},
+                "attachments": 0,
+                "downloadedFiles": []
+            },
+  	{
+    "title": "Lake Baldwin Urgent Care Signage",
+    "noticeId": "fc8b23753b6b4c57ad30382f1b0ceeb2",
+    "postedDate": "2025-02-14",
+    "office": "VETERANS AFFAIRS, DEPARTMENT OF.VETERANS AFFAIRS, DEPARTMENT OF.248-NETWORK CONTRACT OFFICE 8 (36C248)",
+    "description": "{\"description\":\"<p>The purpose of this amendment is to provide responses to questions asked and incorporate revised price schedule.<br />\\na. Questions and Answers are provided in attached document.<br />\\nb. Price schedule B.2 is hereby replaced with the attached Revised Price Schedule B.2 dated 02/14/2025.<br />\\nc. Period for accepting questions is hereby closed.</p>\\n\\n<p></p>\\n\\n<p>*Note: For clarification, this requirement is for 12 metal free standing signs and 1 electric sign.&nbsp;</p>\\n\"}",
+    "attachments": 3,
+    "downloadedFiles": [
+      "Lake Baldwin Urgent Care Signage_fc8b23753b6b4c57ad30382f1b0ceeb2_doc1.pdf",
+      "Lake Baldwin Urgent Care Signage_fc8b23753b6b4c57ad30382f1b0ceeb2_doc2.pdf",
+      "Lake Baldwin Urgent Care Signage_fc8b23753b6b4c57ad30382f1b0ceeb2_doc3.pdf"
+    ]
+  },
+  {
+    "title": "Notice of Intent to Sole Source",
+    "noticeId": "fc1fcc23cfd94754919cd0006801c4ef",
+    "postedDate": "2025-02-14",
+    "office": "STATE, DEPARTMENT OF.STATE, DEPARTMENT OF.US EMBASSY COTONOU",
+    "description": "{\"description\":\"<p></p>\\n\\n<p>This is a NOTICE OF INTENT for the Government to award on a Sole Source basis contract <strong>#</strong><strong>19BN1525Q0001</strong> to CFAO Infrastructure, Benin for Elevator Maintenance Services<strong>&nbsp;</strong>at U.S. Embassy Cotonou. This award is being issued under the authority of FAR 13.106-(b)(1). The contract shall be for a period of one (1) year plus four (4) option years for these services.</p>\\n\\n<p>This will be a sole source requirement in accordance with the authority and citation, 41 USC 253(c) (1), and Federal Acquisition Regulation Part 6.302-1 - Only one responsible source, and no other supplies or services will satisfy agency requirements. CFAO Infrastructure, Benin is considered as the only responsible source to handle US Embassy Cotonou elevator maintenance requirements, and no other services will satisfy the agency requirements.</p>\\n\\n<p>The services will be provided in Cotonou, Benin. This is not a request for proposal, and the intent of this notice is to meet regulatory disclose requirements, however, all responsible sources may submit a capability statement, proposal, or quotation which shall be considered by the Department. Point of contact is Rebecca Stone - Contracting Officer.</p>\\n\"}",
+    "attachments": 1,
+    "downloadedFiles": [
+      "Notice of Intent to Sole Source_fc1fcc23cfd94754919cd0006801c4ef_doc1.pdf"
+    ]
+  },
+  {
+    "title": "Notice of Intent to Sole Source - Smart Buoys",
+    "noticeId": "f25f31583c5546129b9c140018c45b3a",
+    "postedDate": "2025-02-14",
+    "office": "COMMERCE, DEPARTMENT OF.NATIONAL OCEANIC AND ATMOSPHERIC ADMINISTRATION",
+    "description": "{\"description\":\"<p>The National Oceanic and Atmospheric Administration (NOAA) intends to award a single source, firm fixed price contract as authorized by FAR 13.106-1(b)(1) to <strong>Blue Ocean Gear, Inc. </strong>for the purchase of thirty (30) smart buoys, three (3) chargers, and thirty (30) annual data and software subscriptions<strong>. </strong></p>\\n\\n<p>The objective of this acquisition is to procure Brand Name tracking equipment needed by the Northeast Fisheries Science Center for their ropeless gear system traps. These smart buoys must include specific features, such as being submersible, providing immediate notification upon surfacing, and sending retrieval coordinates. Acquiring smart buoys with these features is crucial in order to improve operations of their ropeless gear systems by effectively and quickly detecting surfacing of traps.&nbsp;</p>\\n\\n<p>Following the base year, the contract may be renewed for up to three option periods at the discretion of NEFSC.</p>\\n\\n<p>This notice of intent is not a request for competitive proposals and no solicitation document exists for the requirement. Sources interested in responding to this notice are required to submit a capability statement that includes technical data and cost information, sufficient detail, and convincing evidence that clearly demonstrates the capability to meet the requirement. All capability statements received by the due date of this notice will be considered by the Government.</p>\\n\\n<p>A request for documentation or additional information or submissions that only ask questions will not be considered as an affirmative response. A determination by the Government not to compete based on responses to this notice is solely within the discretion of the Government. Information received will be considered solely for the purpose of determining whether to conduct a competitive procurement or to proceed with a sole source procurement.</p>\\n\\n<p>Capability statements are due no later than <strong>Friday, 21 February 2025, by 1200 Eastern Time</strong>. Be advised that all correspondence sent via e-mail shall contain a subject line that reads &ldquo;<strong>143021-25-0075 &ndash; Smart Buoys</strong>&rdquo;. To ensure your response along with any and all attachments are received, attachment(s) must be less than 20 MB [in total]. It is the responsibility of the offeror to contact the government to confirm receipt prior to the offer due date and time. Capability statements shall be submitted by email ONLY as a Microsoft Word or Adobe PDF attachment to the following POC:</p>\\n\\n<p><strong>Hannah Elwell</strong></p>\\n\\n<p><strong>hannah.elwell@noaa.gov </strong></p>\\n\"}",
+    "attachments": 1,
+    "downloadedFiles": [
+      "Notice of Intent to Sole Source - Smart Buoys_f25f31583c5546129b9c140018c45b3a_doc1.pdf"
+    ]
+  },
+  {
+    "title": "Q--MI-MARQUETTE & LUDINGTON BS - MEDICAL SERVICES 5 - YEAR BPA",
+    "noticeId": "eab938d7974746cab192799699d15728",
+    "postedDate": "2025-02-14",
+    "office": "INTERIOR, DEPARTMENT OF THE.US FISH AND WILDLIFE SERVICE.FWS, SAT TEAM 2",
+    "description": "{\"description\":\"NOTICE OF INTENT TO AWARD SOLE SOURCE FOR FWS MI-MARQUETTE & LUDINGTON BS for a 5-year medical services BPA to DLP MARQUETTE PHYSICIAN PRACTICES, INC. <br/><br/>THIS IS A NOTICE OF INTENT TO AWARD A SOLE SOURCE CONTRACT AND IS NOT A REQUEST FOR COMPETITIVE QUOTES. <br/><br/>U.S. Fish and Wildlife Service, Joint Administrative Operations, Acquisition & Property Operations intends to award a firm fixed price sole source contract under the authority of: <br/><br/>FAR 6.302-1 only one responsible source <br/>To <br/>DLP MARQUETTE PHYSICIAN PRACTICES, INC<br/>1414 W Fair AVE<br/>STE 35<br/>Marquette, Michigan<br/>49855-2675, United States<br/><br/>The North American Industry Classification System (NAICS) code for this requirement is 621111 - Offices of Physicians (except Mental Health Specialists), $16,000,000.\\t<br/>\u00c2\u00bf<br/>The object of this sole source award to DLP MARQUETTE PHYSICIAN PRACTICES, INC is for a 5-year BPA for a medical surveillance program for sea lamprey control workers. Under this requirement, Program employees receive annual exposure specific surveillance exams to monitor the health effects of exposure to the chemicals used in controlling sea lamprey populations in the Great Lakes. Specifically, TFM (3-trifluoromethyl-4-nitrophenol), Bayluscide (niclosamide), Bisazir, and formaldehyde, as well as to the infectious agent for Lyme disease (Borrelia burgdorferi). Continuation of these services is required to continue occupational medicine services in accordance with 242 FW 7 Pesticide Users Safety and to maintain data consistency with regard to reviewing and maintaining medical results for the Program over time.<br/><br/>This synopsis does not constitute a solicitation; however, if any interested party believes they can meet the above requirement, it may submit a statement of capabilities. The statement of capabilities must be submitted in writing and must contain clear and convincing evidence that competition of this requirement would be advantageous to the Government. If parties choose to respond, any cost associated with preparation and submission of data or any other cost incurred in response to this announcement are the sole responsibility of the respondent and will not be reimbursed by the Government. <br/><br/>Capability statements shall be submitted by e-mail ONLY as a Microsoft Word or Adobe PDF attachment to the following address: dana_arnold@fws.gov <br/>\"}",
+    "attachments": 0,
+    "downloadedFiles": []
+  },
+  {
+    "title": "MDA IT OPERATIONS AND ENGINEERING SOLUTIONS (MIOES) DRAFT RFP ",
+    "noticeId": "e2001c1227ad478aa7c984f1fc06dec5",
+    "postedDate": "2025-02-14",
+    "office": "DEPT OF DEFENSE.MISSILE DEFENSE AGENCY (MDA).MISSILE DEFENSE AGENCY (MDA)",
+    "description": "{\"description\":\"<p><strong>14 February 2025 Amendment:</strong></p>\\n\\n<p>The purpose of this amendment is to:</p>\\n\\n<p>1. Provide the Questions and Answers from the Draft RFP in attachment MIOES Full DRFP QnAs 1.30.2025.</p>\\n\\n<p>2. Provide the attachment MIOES CPFF Approach.</p>\\n\\n<p>3. Provide the following Performance Work Statement Attachments:</p>\\n\\n<p>a. MIOES Basic IDIQ PWS</p>\\n\\n<p>b. MIOES C2BMC Support Task Order PWS</p>\\n\\n<p>c. MIOES Enterprise IT Service and Service Delivery Task Order PWS</p>\\n\\n<p>d. MIOES Mission Engineering Task Order PWS</p>\\n\\n<p></p>\\n\\n<p>Please use the question and answer (Q and A) template titled Attachment L-07 MIOES Question Matrix attached to this release to submit your questions, concerns, comments, and/or suggestions regarding these documents. The Government has no obligation because of this posting. It is the potential offeror&#39;s responsibility to monitor SAM.gov periodically for updates to this procurement. Please submit responses to MDAMIOES@mda.mil, no later than 6:00 PM Mountain on February 24, 2025. Questions or comments will not be addressed by telephone. The Government is not required to respond to or post all Q and As.</p>\\n\\n<p></p>\\n\\n<p><strong>Original Description:</strong></p>\\n\\n<p>This is the Draft Request for Proposal (DRFP) for MIOES. Attachments can be found at the link for PIEE in the Attachments/Links section.</p>\\n\\n<p>The unrestricted Bidders&#39; Library can be found at SAM Notice ID&nbsp;HQ085725R000X:</p>\\n\\n<p>https://sam.gov/opp/afb902f079aa4f51b49c7fbe47ba0c10/view</p>\\n\\n<p></p>\\n\\n<p>**********NOTE: Please use the question and answer (Q and A) template titled Attachment L-07 MIOES Question Matrix attached to this release to submit your questions, concerns, comments, and/or suggestions regarding these documents. The Government has no obligation because of this posting. It is the potential offerors responsibility to monitor SAM.gov periodically for updates to this procurement. The Government will not accept or review any response other than those submitted on the form provided. Any other documentation (e.g., white papers, product/service brochures, etc.) in response to this posting will be disregarded. Please submit responses to MDAMIOES@mda.mil, no later than 18:00 PM Mountain on November 22, 2024. Questions or comments will not be addressed by telephone. The Government is not required to respond to or post all Q and As. The Government will post Q and As on SAM.gov that are determined to be beneficial for all of industry to see. Additional Information: Responders are advised that the U.S. Government will not reimburse any contractor for any information or administrative costs incurred in the response to this synopsis/pre-solicitation notice--all costs associated with responding to this synopsis will be borne solely by the interested party. Not responding to this synopsis/pre-solicitation notice does not preclude participation in any future RFP or other solicitation, if any is issued. The Government reserves the right to reject, in whole or in part, any private sector input as a result of this synopsis/pre-solicitation notice and request for comment. TELEPHONE RESPONSES AND INQUIRIES WILL NOT BE ACCEPTED. THIS IS NOT A SOLICITATION AND DOES NOT OBLIGATE THE GOVERNMENT TO ISSUE A SOLICITATION.</p>\\n\"}",
+    "attachments": 6,
+    "downloadedFiles": [
+      "MDA IT OPERATIONS AND ENGINEERING SOLUTIONS (MIOES) DRAFT RFP _e2001c1227ad478aa7c984f1fc06dec5_doc1.pdf",
+      "MDA IT OPERATIONS AND ENGINEERING SOLUTIONS (MIOES) DRAFT RFP _e2001c1227ad478aa7c984f1fc06dec5_doc2.pdf",
+      "MDA IT OPERATIONS AND ENGINEERING SOLUTIONS (MIOES) DRAFT RFP _e2001c1227ad478aa7c984f1fc06dec5_doc3.pdf",
+      "MDA IT OPERATIONS AND ENGINEERING SOLUTIONS (MIOES) DRAFT RFP _e2001c1227ad478aa7c984f1fc06dec5_doc4.pdf",
+      "MDA IT OPERATIONS AND ENGINEERING SOLUTIONS (MIOES) DRAFT RFP _e2001c1227ad478aa7c984f1fc06dec5_doc5.pdf"
+    ]
+  },
+  {
+    "title": "Willamette National Forest-Cone Collecting",
+    "noticeId": "e10224f1eff443b685c89aa44d773612",
+    "postedDate": "2025-02-14",
+    "office": "AGRICULTURE, DEPARTMENT OF.FOREST SERVICE.WILLAMETTE NATIONAL FOREST",
+    "description": "{\"description\":\"<p>The USDA Forest Service (FS), Procurement &amp; Property Services (PPS), Special Projects Operations Center (SPOC), Northwest Branch is issuing this synopsis as a means of complying with the USDA&rsquo;s policy in the Contracting Desk Book, SUBPART 413.3&mdash;SIMPLIFIED ACQUISITION METHODS, 413.303 Blanket Purchase Agreements (BPAs).</p>\\n\\n<p>There is not a solicitation. This synopsis notification of intent to award a BPA Call order does</p>\\n\\n<p>not constitute a request for proposals; submission of any information in response to this notification is purely voluntary; the government assumes no financial responsibility for any</p>\\n\\n<p>costs incurred.</p>\\n\\n<p></p>\\n\\n<p>Delivery:&nbsp; The deliverables for this work will be provided to the ordering activity.</p>\\n\\n<p></p>\\n\\n<p>This BPA is composed of Small Businesses, some with collective teaming agreements in place.&nbsp; There are currently 14 businesses that will receive this solicitation.</p>\\n\\n<p></p>\\n\\n<p>The Call Order shall be issued via email to those companies listed on the BPA. Any changes to the Call Order RFQ shall also be emailed to those companies listed on the BPA. Point of Contact is jared.machgan@usda.gov</p>\\n\"}",
+    "attachments": 0,
+    "downloadedFiles": []
+  },
+  {
+    "title": "Clarivate\u2019s Web of Science (WoS) database  and platforms",
+    "noticeId": "dfb8f828760a4ac3be1db4b8f5e7728e",
+    "postedDate": "2025-02-14",
+    "office": "DEPT OF DEFENSE.DEPT OF THE NAVY.NAVSUP.NAVSUP GLOBAL LOGISTICS SUPPORT.NAVSUP FLC SAN DIEGO.NAVSUP FLT LOG CTR  SAN DIEGO",
+    "description": "{\"description\":\"<p>Clarivate (Web of Science (WoS) and platform resources) Renewal and platform resources)&nbsp;</p>\\n\\n<p>Delivery Date: 4/14/2025 &nbsp;</p>\\n\\n<p>&bull;&nbsp;&nbsp; &nbsp;Web of Science - Science SCIE-Perpetual License&nbsp;<br />\\n&bull;&nbsp;&nbsp; &nbsp;Journal and Highly Cited Data (JCR + ESI)<br />\\n&bull;&nbsp;&nbsp; &nbsp;Web Science - Conferences CPCI-Perpetual License&nbsp;<br />\\n&nbsp;</p>\\n\"}",
+    "attachments": 2,
+    "downloadedFiles": [
+      "Clarivate\u2019s Web of Science (WoS) database  and platforms_dfb8f828760a4ac3be1db4b8f5e7728e_doc1.pdf",
+      "Clarivate\u2019s Web of Science (WoS) database  and platforms_dfb8f828760a4ac3be1db4b8f5e7728e_doc2.pdf"
+    ]
+  },
+  {
+    "title": "Operations and Reporting System (OARS)",
+    "noticeId": "df530faf38bf4ac7936599f037ac6a57",
+    "postedDate": "2025-02-14",
+    "office": "AGRICULTURE, DEPARTMENT OF.ANIMAL AND PLANT HEALTH INSPECTION SERVICE",
+    "description": "{\"description\":\"<p>Pursuant to the FAR 8.405-6(a)(1)(C), USDA, Animal and Plant Health Inspection Service (APHIS),&nbsp;<br />\\nintends to award a sole source IT Development Services task order extension utilizing the GSA contract&nbsp;<br />\\nschedules in that in the interest of economy and efficiency, the new work is a logical follow-on to&nbsp;<br />\\nan original Federal Supply Schedule order (see attached justification).</p>\\n\\n<p><br />\\nThe contract will be for an 8 month no-cost extension of the current task order to complete final system development and go-live services for the Operations and Reporting System (OARS) IT system to be utilized by APHIS, Wildlife Services.</p>\\n\\n<p>This is a Firm-Fixed Price (FFP) task order issued under FAR PART 8 procedures to Axiom Resource Management, Inc., 2941 Fairview Park, Suite 850, Falls Church, VA 22042-4513. UEID: MVCYAQVNJJZ3.</p>\\n\\n<p>This&nbsp;is not a request for competitive proposals. The Government intends to issue a task order extension for final development and support. The requirement is essential to meeting the government&#39;s needs.&nbsp;Any interested sources including small businesses capable of providing the product are encouraged to provide detailed capability information. No requests for capability briefings will be honored as a result of this notice. Interested sources who submit data are responsible for appropriately marking information if it is proprietary in nature. The Government will not award a contract based on the information received, nor reimburse participants for&nbsp;<br />\\ninformation they provide. Information provided is strictly voluntary. Please email Larry Nelson at&nbsp;Larry.D.Nelson@usda.gov. Closing date of this notice is March 17, 2025. The North American Industry Classification Code (NAICS) is 541511 with a small business size standard of $34 million.<br />\\n&nbsp;</p>\\n\"}",
+    "attachments": 1,
+    "downloadedFiles": [
+      "Operations and Reporting System (OARS)_df530faf38bf4ac7936599f037ac6a57_doc1.pdf"
+    ]
+  }
+        ];
+
+        function renderTable(data) {
+            const tbody = document.getElementById('tableBody');
+            tbody.innerHTML = '';
+            
+            data.forEach(notice => {
+                const row = document.createElement('tr');
+                
+                // Parse the description JSON if it's a string
+                let descriptionText = '';
+                try {
+                    const descObj = typeof notice.description === 'string' 
+                        ? JSON.parse(notice.description) 
+                        : notice.description;
+                    descriptionText = descObj.description;
+                } catch (e) {
+                    descriptionText = notice.description;
+                }
+
+                row.innerHTML = `
+                    <td>${notice.title}</td>
+                    <td>${notice.noticeId}</td>
+                    <td>${dayjs(notice.postedDate).format('MMM D, YYYY')}</td>
+                    <td>${notice.office}</td>
+                    <td class="description">${descriptionText}</td>
+                    <td>${notice.downloadedFiles.map(file => 
+                        `<a href="files/${file}" class="file-link">${file}</a><br>`
+                    ).join('')}</td>
+                `;
+                
+                tbody.appendChild(row);
+            });
+        }
+
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const filteredData = notices.filter(notice => 
+                notice.title.toLowerCase().includes(searchTerm) ||
+                notice.noticeId.toLowerCase().includes(searchTerm) ||
+                notice.office.toLowerCase().includes(searchTerm)
+            );
+            renderTable(filteredData);
+        });
+
+        // Initial render
+        renderTable(notices);
+    </script>
+</body>
+</html>
