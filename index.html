@@ -12,6 +12,7 @@
             padding: 20px;
             max-width: 1200px;
             margin: 0 auto;
+            color: #333;
         }
         table {
             width: 100%;
@@ -48,9 +49,51 @@
             border: 1px solid #ddd;
             border-radius: 4px;
         }
+        .filter-container {
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+        }
+        .sole-source-yes {
+            background-color: #f8f4e3;
+        }
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+        .checkbox-label input {
+            margin-right: 8px;
+        }
         .description {
-            max-height: 100px;
+            max-height: 80px;
             overflow-y: auto;
+        }
+        .read-more {
+            color: #0366d6;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 4px;
+        }
+        .read-more:hover {
+            text-decoration: underline;
+        }
+        .awardee {
+            font-weight: 500;
+            color: #424242;
+        }
+        .tag {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 4px;
+        }
+        .tag-sole-source {
+            background-color: #ffeeba;
+            color: #856404;
         }
     </style>
 </head>
@@ -61,6 +104,13 @@
         <input type="text" id="searchInput" placeholder="Search notices...">
     </div>
 
+    <div class="filter-container">
+        <label class="checkbox-label">
+            <input type="checkbox" id="soleSourceFilter">
+            Only show sole source contracts
+        </label>
+    </div>
+
     <table id="noticesTable">
         <thead>
             <tr>
@@ -69,6 +119,8 @@
                 <th>Posted Date</th>
                 <th>Office</th>
                 <th>Description</th>
+                <th>Sole Source</th>
+                <th>Awardee</th>
                 <th>Attachments</th>
             </tr>
         </thead>
@@ -78,16 +130,18 @@
 
     <script>
         const notices = [
-            {
-                "title": "Electro-Hydraulic Windlass Parts",
-                "noticeId": "fcf894730608445498f4fa42159ab90f",
-                "postedDate": "2025-02-14",
-                "office": "DEPT OF DEFENSE.DEPT OF THE NAVY.NAVSUP.NAVSUP GLOBAL LOGISTICS SUPPORT.NAVSUP FLC JACKSONVILLE",
-                "description": {"description":"<p>The Naval Supply (NAVSUP) Systems Command...</p>"},
-                "attachments": 0,
-                "downloadedFiles": []
-            },
-  	{
+  {
+    "title": "Electro-Hydraulic Windlass Parts",
+    "noticeId": "fcf894730608445498f4fa42159ab90f",
+    "postedDate": "2025-02-14",
+    "office": "DEPT OF DEFENSE.DEPT OF THE NAVY.NAVSUP.NAVSUP GLOBAL LOGISTICS SUPPORT.NAVSUP FLC JACKSONVILLE",
+    "description": "{\"description\":\"<p>The Naval Supply (NAVSUP) Systems Command, Fleet Logistics Center Jacksonville (FLCJ), FL intends to issue a sole source&nbsp;award utilizing simplified acquisition procedures to Trident Maritime Systems - Heavy Equipment Group for Electro-Hydraulic Windlass spare parts as listed below:</p>\\n\\n<p>1. Coupling 5B1-04430, Qty 1<br />\\n2. ASSY,CNTRL,STROKE 5D3-02087, Qty 1<br />\\n3. ASSY,CNTRL,STROKE 5D3-02091, Qty 1</p>\\n\\n<p>The applicable North American Industrial Classification System Code (NAICS) code is 332510, with a size standard of 750 employees. This notice of intent is for informational purposes only. This notice foes not constitute a request for proposals, request for quote or an invitation to bid.&nbsp; All sources eligible to provide the requirement must respond in writing.&nbsp; Responses must be supported with clear and convincing evidence to clearly articulate the ability to provide the requirement as outlines above.&nbsp; A request for documentation will not be considered as an affirmative response. If no response is received, within three (3) calendar days after publication of this notice, to the effect that comparable items are available, and that this is more advantageous to the Government than obtaining this product though a sole source contract, then a sole source acquisition award will be made.</p>\\n\"}",
+    "attachments": 0,
+    "downloadedFiles": [],
+    "is_sole_source": true,
+    "awardee": "Trident Maritime Systems - Heavy Equipment Group"
+  },
+  {
     "title": "Lake Baldwin Urgent Care Signage",
     "noticeId": "fc8b23753b6b4c57ad30382f1b0ceeb2",
     "postedDate": "2025-02-14",
@@ -95,10 +149,12 @@
     "description": "{\"description\":\"<p>The purpose of this amendment is to provide responses to questions asked and incorporate revised price schedule.<br />\\na. Questions and Answers are provided in attached document.<br />\\nb. Price schedule B.2 is hereby replaced with the attached Revised Price Schedule B.2 dated 02/14/2025.<br />\\nc. Period for accepting questions is hereby closed.</p>\\n\\n<p></p>\\n\\n<p>*Note: For clarification, this requirement is for 12 metal free standing signs and 1 electric sign.&nbsp;</p>\\n\"}",
     "attachments": 3,
     "downloadedFiles": [
-      "Lake Baldwin Urgent Care Signage_fc8b23753b6b4c57ad30382f1b0ceeb2_doc1.pdf",
+      "Lake Baldwin Urgent Care Signage_fc8b23753b6b4c57ad30382f1b0ceeb2_doc1.docx",
       "Lake Baldwin Urgent Care Signage_fc8b23753b6b4c57ad30382f1b0ceeb2_doc2.pdf",
-      "Lake Baldwin Urgent Care Signage_fc8b23753b6b4c57ad30382f1b0ceeb2_doc3.pdf"
-    ]
+      "Lake Baldwin Urgent Care Signage_fc8b23753b6b4c57ad30382f1b0ceeb2_doc3.docx"
+    ],
+    "is_sole_source": null,
+    "awardee": null
   },
   {
     "title": "Notice of Intent to Sole Source",
@@ -109,7 +165,9 @@
     "attachments": 1,
     "downloadedFiles": [
       "Notice of Intent to Sole Source_fc1fcc23cfd94754919cd0006801c4ef_doc1.pdf"
-    ]
+    ],
+    "is_sole_source": true,
+    "awardee": "CFAO Infrastructure, Benin"
   },
   {
     "title": "Notice of Intent to Sole Source - Smart Buoys",
@@ -120,108 +178,235 @@
     "attachments": 1,
     "downloadedFiles": [
       "Notice of Intent to Sole Source - Smart Buoys_f25f31583c5546129b9c140018c45b3a_doc1.pdf"
-    ]
+    ],
+    "is_sole_source": true,
+    "awardee": "Blue Ocean Gear, Inc."
   },
   {
-    "title": "Q--MI-MARQUETTE & LUDINGTON BS - MEDICAL SERVICES 5 - YEAR BPA",
-    "noticeId": "eab938d7974746cab192799699d15728",
-    "postedDate": "2025-02-14",
-    "office": "INTERIOR, DEPARTMENT OF THE.US FISH AND WILDLIFE SERVICE.FWS, SAT TEAM 2",
-    "description": "{\"description\":\"NOTICE OF INTENT TO AWARD SOLE SOURCE FOR FWS MI-MARQUETTE & LUDINGTON BS for a 5-year medical services BPA to DLP MARQUETTE PHYSICIAN PRACTICES, INC. <br/><br/>THIS IS A NOTICE OF INTENT TO AWARD A SOLE SOURCE CONTRACT AND IS NOT A REQUEST FOR COMPETITIVE QUOTES. <br/><br/>U.S. Fish and Wildlife Service, Joint Administrative Operations, Acquisition & Property Operations intends to award a firm fixed price sole source contract under the authority of: <br/><br/>FAR 6.302-1 only one responsible source <br/>To <br/>DLP MARQUETTE PHYSICIAN PRACTICES, INC<br/>1414 W Fair AVE<br/>STE 35<br/>Marquette, Michigan<br/>49855-2675, United States<br/><br/>The North American Industry Classification System (NAICS) code for this requirement is 621111 - Offices of Physicians (except Mental Health Specialists), $16,000,000.\\t<br/>\u00c2\u00bf<br/>The object of this sole source award to DLP MARQUETTE PHYSICIAN PRACTICES, INC is for a 5-year BPA for a medical surveillance program for sea lamprey control workers. Under this requirement, Program employees receive annual exposure specific surveillance exams to monitor the health effects of exposure to the chemicals used in controlling sea lamprey populations in the Great Lakes. Specifically, TFM (3-trifluoromethyl-4-nitrophenol), Bayluscide (niclosamide), Bisazir, and formaldehyde, as well as to the infectious agent for Lyme disease (Borrelia burgdorferi). Continuation of these services is required to continue occupational medicine services in accordance with 242 FW 7 Pesticide Users Safety and to maintain data consistency with regard to reviewing and maintaining medical results for the Program over time.<br/><br/>This synopsis does not constitute a solicitation; however, if any interested party believes they can meet the above requirement, it may submit a statement of capabilities. The statement of capabilities must be submitted in writing and must contain clear and convincing evidence that competition of this requirement would be advantageous to the Government. If parties choose to respond, any cost associated with preparation and submission of data or any other cost incurred in response to this announcement are the sole responsibility of the respondent and will not be reimbursed by the Government. <br/><br/>Capability statements shall be submitted by e-mail ONLY as a Microsoft Word or Adobe PDF attachment to the following address: dana_arnold@fws.gov <br/>\"}",
-    "attachments": 0,
-    "downloadedFiles": []
-  },
-  {
-    "title": "MDA IT OPERATIONS AND ENGINEERING SOLUTIONS (MIOES) DRAFT RFP ",
-    "noticeId": "e2001c1227ad478aa7c984f1fc06dec5",
-    "postedDate": "2025-02-14",
-    "office": "DEPT OF DEFENSE.MISSILE DEFENSE AGENCY (MDA).MISSILE DEFENSE AGENCY (MDA)",
-    "description": "{\"description\":\"<p><strong>14 February 2025 Amendment:</strong></p>\\n\\n<p>The purpose of this amendment is to:</p>\\n\\n<p>1. Provide the Questions and Answers from the Draft RFP in attachment MIOES Full DRFP QnAs 1.30.2025.</p>\\n\\n<p>2. Provide the attachment MIOES CPFF Approach.</p>\\n\\n<p>3. Provide the following Performance Work Statement Attachments:</p>\\n\\n<p>a. MIOES Basic IDIQ PWS</p>\\n\\n<p>b. MIOES C2BMC Support Task Order PWS</p>\\n\\n<p>c. MIOES Enterprise IT Service and Service Delivery Task Order PWS</p>\\n\\n<p>d. MIOES Mission Engineering Task Order PWS</p>\\n\\n<p></p>\\n\\n<p>Please use the question and answer (Q and A) template titled Attachment L-07 MIOES Question Matrix attached to this release to submit your questions, concerns, comments, and/or suggestions regarding these documents. The Government has no obligation because of this posting. It is the potential offeror&#39;s responsibility to monitor SAM.gov periodically for updates to this procurement. Please submit responses to MDAMIOES@mda.mil, no later than 6:00 PM Mountain on February 24, 2025. Questions or comments will not be addressed by telephone. The Government is not required to respond to or post all Q and As.</p>\\n\\n<p></p>\\n\\n<p><strong>Original Description:</strong></p>\\n\\n<p>This is the Draft Request for Proposal (DRFP) for MIOES. Attachments can be found at the link for PIEE in the Attachments/Links section.</p>\\n\\n<p>The unrestricted Bidders&#39; Library can be found at SAM Notice ID&nbsp;HQ085725R000X:</p>\\n\\n<p>https://sam.gov/opp/afb902f079aa4f51b49c7fbe47ba0c10/view</p>\\n\\n<p></p>\\n\\n<p>**********NOTE: Please use the question and answer (Q and A) template titled Attachment L-07 MIOES Question Matrix attached to this release to submit your questions, concerns, comments, and/or suggestions regarding these documents. The Government has no obligation because of this posting. It is the potential offerors responsibility to monitor SAM.gov periodically for updates to this procurement. The Government will not accept or review any response other than those submitted on the form provided. Any other documentation (e.g., white papers, product/service brochures, etc.) in response to this posting will be disregarded. Please submit responses to MDAMIOES@mda.mil, no later than 18:00 PM Mountain on November 22, 2024. Questions or comments will not be addressed by telephone. The Government is not required to respond to or post all Q and As. The Government will post Q and As on SAM.gov that are determined to be beneficial for all of industry to see. Additional Information: Responders are advised that the U.S. Government will not reimburse any contractor for any information or administrative costs incurred in the response to this synopsis/pre-solicitation notice--all costs associated with responding to this synopsis will be borne solely by the interested party. Not responding to this synopsis/pre-solicitation notice does not preclude participation in any future RFP or other solicitation, if any is issued. The Government reserves the right to reject, in whole or in part, any private sector input as a result of this synopsis/pre-solicitation notice and request for comment. TELEPHONE RESPONSES AND INQUIRIES WILL NOT BE ACCEPTED. THIS IS NOT A SOLICITATION AND DOES NOT OBLIGATE THE GOVERNMENT TO ISSUE A SOLICITATION.</p>\\n\"}",
-    "attachments": 6,
-    "downloadedFiles": [
-      "MDA IT OPERATIONS AND ENGINEERING SOLUTIONS (MIOES) DRAFT RFP _e2001c1227ad478aa7c984f1fc06dec5_doc1.pdf",
-      "MDA IT OPERATIONS AND ENGINEERING SOLUTIONS (MIOES) DRAFT RFP _e2001c1227ad478aa7c984f1fc06dec5_doc2.pdf",
-      "MDA IT OPERATIONS AND ENGINEERING SOLUTIONS (MIOES) DRAFT RFP _e2001c1227ad478aa7c984f1fc06dec5_doc3.pdf",
-      "MDA IT OPERATIONS AND ENGINEERING SOLUTIONS (MIOES) DRAFT RFP _e2001c1227ad478aa7c984f1fc06dec5_doc4.pdf",
-      "MDA IT OPERATIONS AND ENGINEERING SOLUTIONS (MIOES) DRAFT RFP _e2001c1227ad478aa7c984f1fc06dec5_doc5.pdf"
-    ]
-  },
-  {
-    "title": "Willamette National Forest-Cone Collecting",
-    "noticeId": "e10224f1eff443b685c89aa44d773612",
-    "postedDate": "2025-02-14",
-    "office": "AGRICULTURE, DEPARTMENT OF.FOREST SERVICE.WILLAMETTE NATIONAL FOREST",
-    "description": "{\"description\":\"<p>The USDA Forest Service (FS), Procurement &amp; Property Services (PPS), Special Projects Operations Center (SPOC), Northwest Branch is issuing this synopsis as a means of complying with the USDA&rsquo;s policy in the Contracting Desk Book, SUBPART 413.3&mdash;SIMPLIFIED ACQUISITION METHODS, 413.303 Blanket Purchase Agreements (BPAs).</p>\\n\\n<p>There is not a solicitation. This synopsis notification of intent to award a BPA Call order does</p>\\n\\n<p>not constitute a request for proposals; submission of any information in response to this notification is purely voluntary; the government assumes no financial responsibility for any</p>\\n\\n<p>costs incurred.</p>\\n\\n<p></p>\\n\\n<p>Delivery:&nbsp; The deliverables for this work will be provided to the ordering activity.</p>\\n\\n<p></p>\\n\\n<p>This BPA is composed of Small Businesses, some with collective teaming agreements in place.&nbsp; There are currently 14 businesses that will receive this solicitation.</p>\\n\\n<p></p>\\n\\n<p>The Call Order shall be issued via email to those companies listed on the BPA. Any changes to the Call Order RFQ shall also be emailed to those companies listed on the BPA. Point of Contact is jared.machgan@usda.gov</p>\\n\"}",
-    "attachments": 0,
-    "downloadedFiles": []
-  },
-  {
-    "title": "Clarivate\u2019s Web of Science (WoS) database  and platforms",
-    "noticeId": "dfb8f828760a4ac3be1db4b8f5e7728e",
-    "postedDate": "2025-02-14",
-    "office": "DEPT OF DEFENSE.DEPT OF THE NAVY.NAVSUP.NAVSUP GLOBAL LOGISTICS SUPPORT.NAVSUP FLC SAN DIEGO.NAVSUP FLT LOG CTR  SAN DIEGO",
-    "description": "{\"description\":\"<p>Clarivate (Web of Science (WoS) and platform resources) Renewal and platform resources)&nbsp;</p>\\n\\n<p>Delivery Date: 4/14/2025 &nbsp;</p>\\n\\n<p>&bull;&nbsp;&nbsp; &nbsp;Web of Science - Science SCIE-Perpetual License&nbsp;<br />\\n&bull;&nbsp;&nbsp; &nbsp;Journal and Highly Cited Data (JCR + ESI)<br />\\n&bull;&nbsp;&nbsp; &nbsp;Web Science - Conferences CPCI-Perpetual License&nbsp;<br />\\n&nbsp;</p>\\n\"}",
-    "attachments": 2,
-    "downloadedFiles": [
-      "Clarivate\u2019s Web of Science (WoS) database  and platforms_dfb8f828760a4ac3be1db4b8f5e7728e_doc1.pdf",
-      "Clarivate\u2019s Web of Science (WoS) database  and platforms_dfb8f828760a4ac3be1db4b8f5e7728e_doc2.pdf"
-    ]
-  },
-  {
-    "title": "Operations and Reporting System (OARS)",
-    "noticeId": "df530faf38bf4ac7936599f037ac6a57",
-    "postedDate": "2025-02-14",
-    "office": "AGRICULTURE, DEPARTMENT OF.ANIMAL AND PLANT HEALTH INSPECTION SERVICE",
-    "description": "{\"description\":\"<p>Pursuant to the FAR 8.405-6(a)(1)(C), USDA, Animal and Plant Health Inspection Service (APHIS),&nbsp;<br />\\nintends to award a sole source IT Development Services task order extension utilizing the GSA contract&nbsp;<br />\\nschedules in that in the interest of economy and efficiency, the new work is a logical follow-on to&nbsp;<br />\\nan original Federal Supply Schedule order (see attached justification).</p>\\n\\n<p><br />\\nThe contract will be for an 8 month no-cost extension of the current task order to complete final system development and go-live services for the Operations and Reporting System (OARS) IT system to be utilized by APHIS, Wildlife Services.</p>\\n\\n<p>This is a Firm-Fixed Price (FFP) task order issued under FAR PART 8 procedures to Axiom Resource Management, Inc., 2941 Fairview Park, Suite 850, Falls Church, VA 22042-4513. UEID: MVCYAQVNJJZ3.</p>\\n\\n<p>This&nbsp;is not a request for competitive proposals. The Government intends to issue a task order extension for final development and support. The requirement is essential to meeting the government&#39;s needs.&nbsp;Any interested sources including small businesses capable of providing the product are encouraged to provide detailed capability information. No requests for capability briefings will be honored as a result of this notice. Interested sources who submit data are responsible for appropriately marking information if it is proprietary in nature. The Government will not award a contract based on the information received, nor reimburse participants for&nbsp;<br />\\ninformation they provide. Information provided is strictly voluntary. Please email Larry Nelson at&nbsp;Larry.D.Nelson@usda.gov. Closing date of this notice is March 17, 2025. The North American Industry Classification Code (NAICS) is 541511 with a small business size standard of $34 million.<br />\\n&nbsp;</p>\\n\"}",
+    "title": "NATO Business Opportunity: Provision of Staging Facilities at Elvegaardsmoen Training Area.",
+    "noticeId": "ef90be26a6034cc6ba8555b60442f172",
+    "postedDate": "2025-02-18",
+    "office": "COMMERCE, DEPARTMENT OF.BUREAU OF INDUSTRY AND SECURITY",
+    "description": "{\"description\":\"<p>On behalf of the Norwegian Ministry of Defense, the Norwegian Defense Estates Agency intends to issue an invitation to submit tender under the rules and procedures for National Competitive Bidding Plus (NCB+) as defined for the NATO Security Investment Program (NSIP). The project will cover the provision of staging facilities at Elvegaardsmoen Training Area. Elvegaardsmoen is located in Nordland county, Northern Norway.</p>\\n\\n<p>To be eligible to participate in the bidding process, U.S. bidders must have professional operations in the United States. In addition, please note that contractors performing work on electrical systems in Norway must be in possession of the required national certification for such works in order to ensure compliance with Norwegian rules and regulations.</p>\\n\\n<p>The contract will include, but is not limited to, establishing a staging area, including: foundation works, gravel surfaces, paved access roads, and technical installations</p>\\n\\n<p>To express an interest in this project, please follow the instructtons included in the attachment.&nbsp;</p>\\n\\n<p>The contract is scheduled to be signed in March 2025, with start of works shortly after contract signature. Works are scheduled to be completed in November 2025.</p>\\n\\n<p>Thank you for your interest in this project.&nbsp;<br />\\n&nbsp;</p>\\n\"}",
     "attachments": 1,
     "downloadedFiles": [
-      "Operations and Reporting System (OARS)_df530faf38bf4ac7936599f037ac6a57_doc1.pdf"
-    ]
+      "NATO Business Opportunity_ Provision of Staging Facilities at Elvegaardsmoen Training Area._ef90be26a6034cc6ba8555b60442f172_doc1.pdf"
+    ],
+    "is_sole_source": false,
+    "awardee": null
+  },
+  {
+    "title": "Stab (Center Box)",
+    "noticeId": "e8e728360d4542bcaeece03c5de24b4e",
+    "postedDate": "2025-02-18",
+    "office": "HOMELAND SECURITY, DEPARTMENT OF.US COAST GUARD.AVIATION LOGISTICS CENTER (ALC)(00038)",
+    "description": "{\"description\":\"<p><strong>A00001 - The response date for this special notice has been extended until March 4, 2025 at 2:00 PM EST.&nbsp;</strong><br />\\n&nbsp;</p>\\n\\n<p><strong>NOTICE OF INTENT TO AWARD A SOLE SOURCE BOA CALL</strong>: The United States Coast Guard (USCG), Aviation Logistics Center (ALC), Medium Range Recovery (MRR) Procurement Division intends to solicit and negotiate with only one source, the Original Equipment Manufacturer (OEM) &ndash; Sikorsky Aircraft Corporation (Cage Code 78286), under Basic Ordering Agreement SPE4A1-22-G-0005 for the items listed in Attachment 1. In accordance with FAR 13.106-1 (b)(1), the items listed in Attachment 1 are available from only one source. The North American Industry Classification System Code (NAICS) is 336413 with a size standard of 1,250 Employees. The Product Service Code (PSC) is 1560. The small business set aside has been dissolved. This requirement is unrestricted. Delivery is requested within two hundred (200) days after the receipt of order (ARO). The USCG desires early deliveries therefore early shipments are encouraged at no additional cost to the Government.&nbsp; F.O.B. point is Origin.&nbsp; Inspection and Acceptance under this contract will be performed at origin by Defense Contract Management Agency (DCMA). Solicitation number 70Z03825QJ0000161 is assigned for tracking purposes only.&nbsp; No solicitation package will be issued. This notice of intent is not a request for competitive proposals; however, all responsible sources may submit a quotation to Julie.G.Lininger@uscg.mil and mrr-procurement@uscg.mil with 70Z03825QJ0000161 in the subject line which will be considered by the agency if received no later than 2:00 P.M., (EST) on 4 March 2025. A determination by the Government not to compete the proposed procurement based upon the responses to this notice is solely within the discretion of the Government. Award will be made upon determination of fair and reasonable pricing.</p>\\n\\n<p></p>\\n\\n<ol>\\n\\t<li>See Attachment 1 &ndash; &ldquo;List of Items - 70Z03825QJ0000161&rdquo;</li>\\n\\t<li>See Attachment 2 &ndash; &ldquo;Redacted J and A &ndash; 70Z03825QJ0000161&rdquo;</li>\\n</ol>\\n\\n<p></p>\\n\\n<p></p>\\n\\n<p></p>\\n\\n<p></p>\\n\\n<p></p>\\n\\n<p></p>\\n\\n<p></p>\\n\"}",
+    "attachments": 2,
+    "downloadedFiles": [
+      "Stab (Center Box)_e8e728360d4542bcaeece03c5de24b4e_doc1.pdf",
+      "Stab (Center Box)_e8e728360d4542bcaeece03c5de24b4e_doc2.pdf"
+    ],
+    "is_sole_source": null,
+    "awardee": null
+  },
+  {
+    "title": "U.S. Army War College Education Center (USAHEC) Library Management System",
+    "noticeId": "daf2220fa51d4414810a134a6c5ebed2",
+    "postedDate": "2025-02-18",
+    "office": "DEPT OF DEFENSE.DEPT OF THE ARMY.AMC.ACC.MISSION & INSTALLATION CONTRACTING COMMAND.FDO EUSTIS.W6QM MICC-CARLISLE BARRACKS",
+    "description": "{\"description\":\"<p>This is a non-personal service(s) contract to provide a Library Management System for the U.S. Army Heritage and Education Center (USAHEC).</p>\\n\\n<p>THIS is a Sources Sought Notice ONLY.&nbsp; The U.S. Government currently intends to award a contract for U.S. Army War College Education Center (USAHEC) Library Management System to Ex Libris (USA) Inc. on a SOLE SOURCE basis but is seeking vendors that may be able to perform this requirement in order to support a competitive procurement. Accordingly, the U.S. Government highly encourages all interested businesses (large and small) to respond to this source sought synopsis.&nbsp; In addition, small businesses, in all socioeconomic categories (including, 8(a) Business Development Program, Small Disadvantage Business, Historically Underutilized Business Zone, Service-Disabled Veteran-Owned, Women-Owned Small Business concerns), must describe their identifying capabilities in meeting the requirements at a fair market price, i.e., information which may help support a set-aside.</p>\\n\"}",
+    "attachments": 2,
+    "downloadedFiles": [
+      "U.S. Army War College Education Center (USAHEC) Library Management System_daf2220fa51d4414810a134a6c5ebed2_doc1.docx",
+      "U.S. Army War College Education Center (USAHEC) Library Management System_daf2220fa51d4414810a134a6c5ebed2_doc2.docx"
+    ],
+    "is_sole_source": null,
+    "awardee": null
+  },
+  {
+    "title": "RFI for DISA D-ESInet system",
+    "noticeId": "d6407b92c9ed41b6aedeb33183a6363a",
+    "postedDate": "2025-02-18",
+    "office": "DEPT OF DEFENSE.DEFENSE INFORMATION SYSTEMS AGENCY (DISA)",
+    "description": "{\"description\":\"<p>DISA is seeking information on the design, implementation, test, operation, and sustainment of a D-ESInet system that meets the operational needs of DoD emergency services community. The D-ESInet must be designed to provide a secure, reliable, and interoperable network infrastructure to deliver emergency calls to the right DoD Public Safety Answering Points (PSAPs) for emergency services.</p>\\n\\n<p>DISA is also seeking a capability statement. Interested businesses shall submit a brief capabilities statement (no more than three pages) demonstrating the ability to perform the services, as described in the attached RFI.</p>\\n\"}",
+    "attachments": 1,
+    "downloadedFiles": [
+      "RFI for DISA D-ESInet system_d6407b92c9ed41b6aedeb33183a6363a_doc1.pdf"
+    ],
+    "is_sole_source": false,
+    "awardee": null
+  },
+  {
+    "title": "Q201--Intent to Sole Source Notice  - Bloomington CBOC Indy",
+    "noticeId": "ce1acd75fd0341b7a929f9c0e1871428",
+    "postedDate": "2025-02-18",
+    "office": "VETERANS AFFAIRS, DEPARTMENT OF.VETERANS AFFAIRS, DEPARTMENT OF.250-NETWORK CONTRACT OFFICE 10 (36C250)",
+    "description": "{\"description\":\"REVISED 2.18.2025\\nDepartment of Veterans Affairs (VA), Richard L. Roudebush, VA Medical Center in Indianapolis, Indiana intends to award a Sole Source fixed price 6-month, short-term contract for Primary Care and Primary Care Mental Health services via a community-based outpatient clinic (CBOC) in Bloomington, Indiana to the current incumbent Valor Healthcare Inc. This will be under NAICS Code 621498, size standard $22.5 Million. The Government intends, in accordance with FAR 6.302-1 (contracting officer determines that the circumstances of the contract action deem Only one responsible source and no other supplies or services will satisfy agency requirements).  This is due to the new VA Staff model and operated CBOC that is being built and opened in September 2025. \\nThis will be for the period of 6 months with a period of performance from March 23, 2025, through September 22, 2025, in strict accordance with the statement of work, all schedules, and terms and conditions of the resultant contract. No solicitation package is available or will be available. A determination not to compete is solely within the discretion of the Government. Any response to this notice must show clear and convincing evidence that competition would be advantageous to the Government. Responses must be received NLT 14:00 pm Eastern time on 02/20/2025. No telephonic inquiries will be accepted. All responses shall be emailed to michelle.ford2@va.gov \\n\"}",
+    "attachments": 1,
+    "downloadedFiles": [
+      "Q201--Intent to Sole Source Notice  - Bloomington CBOC Indy_ce1acd75fd0341b7a929f9c0e1871428_doc1.docx"
+    ],
+    "is_sole_source": true,
+    "awardee": "Valor Healthcare Inc."
+  },
+  {
+    "title": "Notice of Intent to Sole Source: Allergen Extract Supplies",
+    "noticeId": "c6a530226c8547c09e09ed5d8a025c69",
+    "postedDate": "2025-02-18",
+    "office": "DEPT OF DEFENSE.DEPT OF THE ARMY.MEDCOM.W40M USA HCA",
+    "description": "{\"description\":\"<p>The Health Readiness Contracting Office, located at 2199 Storage Street, Suite 68 JBSA Fort Sam Houston, Texas 78234 is issuing this Notice of Intent (NOI) to inform industry contractors of the Government&rsquo;s intent to execute a Sole Source Award under the authority of FAR 6.302-1, Only One Responsible Source and No Other Supplies or Services Will Satisfy Agency Requirements under the authority of 10 U.S.C. 3204 (c)(1).</p>\\n\\n<p>The contractor shall supply allergen extract stock solutions for a wide variety of allergens, including but not limited to trees, grasses, weeds, molds, food, animals and miscellaneous antigens; vials, syringes and other related ancillary supplies in support of the United States Army Centralized Allergen Extract Laboratory (USACAEL), Kimbrough Ambulatory Care Center (KACC), Fort Meade, MD.</p>\\n\"}",
+    "attachments": 2,
+    "downloadedFiles": [
+      "Notice of Intent to Sole Source_ Allergen Extract Supplies_c6a530226c8547c09e09ed5d8a025c69_doc1.docx",
+      "Notice of Intent to Sole Source_ Allergen Extract Supplies_c6a530226c8547c09e09ed5d8a025c69_doc2.pdf"
+    ],
+    "is_sole_source": null,
+    "awardee": null
+  },
+  {
+    "title": "OASIS MONTAJ SOFTWARE SUBSCRIPTION",
+    "noticeId": "c3f560e705844cb5903a34733dd21750",
+    "postedDate": "2025-02-18",
+    "office": "DEPT OF DEFENSE.DEPT OF THE NAVY.NAVSEA.NAVSEA WARFARE CENTER.NSWC INDIAN HEAD DIVISION",
+    "description": "{\"description\":\"<p>This is a <u><strong>SPECIAL NOTICE TO SOLE SOURCE</strong></u> a commercial items/services prepared in accordance with Federal Acquisition Regulation (FAR).&nbsp; Naval Surface Warfare Center Indian Head Division (NSWC IHD), located in Indian Head, Maryland intends to award a firm fixed price (FFP) purchase order using Simplified Acquisition Procedures for: <strong>OASIS MONTAJ SOFTWARE SUBSCRIPTION</strong>.&nbsp; This special notice&nbsp;<strong>will be posted as OTHER THAN Full and Open.</strong>&nbsp; Quotes are not being solicited.&nbsp; The Request for Quotation (RFQ) no. is&nbsp;<strong>N00174-25-SIMACQ-D2-0020. </strong>The NAICS code is <strong>523210.&nbsp; </strong>The provisions and clauses included and/or incorporated in this solicitation<strong> </strong>document are those in effect through the Federal Acquisition Circular. This<strong> </strong>RFQ incorporates all provisions and clauses in effect through Federal Acquisition Circular FAC 2020-01 and the Defense Federal Acquisition Regulation Supplement (DFARS) DPN 20190531.</p>\\n\\n<p></p>\\n\\n<p>The Government will award a contract resulting from this solicitation to the responsible vendor whose quote, conforming to the solicitation that will be most advantageous to the Government, price and other factors considered. The Government intends to evaluate all timely quotes received from eligible vendors on a lowest price technically acceptable (LPTA) basis. The Government intends to evaluate quotations and award a contract without discussions with quoters. The Government reserves the right to conduct discussions if the Contracting Officer later determines them to be necessary. The Government will make award based on the availability of funds.</p>\\n\\n<p></p>\\n\\n<p>Evaluation Factors (in order of importance)</p>\\n\\n<ol>\\n\\t<li><strong>Technical &ndash; </strong>Quotes submitted shall address all requirements/qualified parts included in the RFQ and SOW.</li>\\n\\t<li><strong>Price &ndash; </strong>Quotes must include all applicable costs. <strong>Submitted quotes are NOT TO EXCEED 250,000.00</strong> (Simplified Acquisition Threshold).</li>\\n</ol>\\n\\n<p></p>\\n\\n<p>Questions/clarification regarding this solicitation must be submitted via email to <strong>christina.e.simpson.civ@us.navy.mil</strong> by<strong> 24 FEBRUARY 2025 08:00 AM EST. </strong></p>\\n\\n<p></p>\\n\\n<p>1. Official Company Name;</p>\\n\\n<p>2. Point of contact including name and phone number; and</p>\\n\\n<p>3. DUNS number and Cage Code.</p>\\n\\n<p><strong>NOTE TO VENDORS</strong>:&nbsp; You must have an &ldquo;active&rdquo; cage code in SAMs and a Wide-Area-Work-Flow (WAWF) prior to submitting a quote.</p>\\n\\n<p>The Points of Contact for this acquisition is</p>\\n\\n<p><strong>Christina Simpson, at </strong><strong>christina.e.simpson.civ@us.navy.mil</strong><strong>&nbsp; </strong></p>\\n\"}",
+    "attachments": 1,
+    "downloadedFiles": [
+      "OASIS MONTAJ SOFTWARE SUBSCRIPTION_c3f560e705844cb5903a34733dd21750_doc1.pdf"
+    ],
+    "is_sole_source": true,
+    "awardee": null
+  },
+  {
+    "title": "Intent to Sole Source Joint Range Extension (JRE) Help Desk Support",
+    "noticeId": "bfec187739f34ebf983fbeff9ee6ef59",
+    "postedDate": "2025-02-18",
+    "office": "DEPT OF DEFENSE.DEPT OF THE AIR FORCE.PACIFIC AIR FORCES.FA5270  18 CONS PK",
+    "description": "{\"description\":\"<p>This is a synopsis of contract action (SOCA); this is not a solicitation for a Request for Quote.</p>\\n\\n<p>No reimbursement will made for any costs associated with providing information in response to this synopsis or any follow-up information requests. No contract award will be made on the basis of response to this notice. The purpose of this notice is to allow interested parties to assert and explain their capability to perform the work described. Responses should appear on company letterhead and include, at a minimum, affirmation of active registration in the System for Award Management (SAM), your qualifications and any applicable pricing data or information. All responses should include a point of contact, telephone number, and e-mail address.&nbsp; All responsible sources may respond to this notice and all responses will be considered by the agency.</p>\\n\\n<p>Please do not request a copy of solicitation, as one does not exist.</p>\\n\\n<p>The 18th Contracting Squadron, intends to &nbsp;issue a sole source, Firm-Fixed Price Contract under the authority of 10 United States Code (USC) 2304(c)(1), as implemented by FAR 13.106-1(b)(1)(i) to&nbsp;</p>\\n\\n<p>Science Applications International Corporation (SAIC)&nbsp;</p>\\n\\n<p>12010 Sunset Hills RD FL 4<br />\\nReston, Virginia<br />\\n20190-5856, United States<br />\\nCAGE: 6XWA8</p>\\n\\n<p>The applicable NAICS is 541519 with a size standard of $34 million.</p>\\n\\n<p>The following is a brief description of the acquisition requirement:</p>\\n\\n<p>24/7/365 JRE Help Desk. Telephonic technical Support for the JRE system via toll-free JRE Help Line, email and website available 24-hours per day, 7 days per week and 365 days per year.</p>\\n\\n<p>Highly trained JRE Subject Matter Experts (SMEs) provide real-time technical assistance on all issues related to the operation and maintenance of JRE software and hardware.</p>\\n\\n<p>One base year plus 4 option years plus 6 months pre-priced option.&nbsp;</p>\\n\\n<p>There are no solicitation documents; however, any vendors that believe they can meet the requirements described should submit a complete technical package, which provides clear and convincing evidence that they can meet the Government&rsquo;s requirement. Information received will be considered solely for the purpose of determining whether a competitive procurement can be conducted. A determination not to compete this proposed procurement based on response to this notice is solely within the discretion of the Government.</p>\\n\\n<p>Further, the response should include any special requirements for a commercial contract (i.e. Commercial Financing, Warranty Provisions, Delivery Information, etc.) in accordance with FAR part 12.</p>\\n\\n<p>All information furnished shall be in writing and must contain sufficient detail to allow the government representative to evaluate and determine if it can meet the requirement. All responses should be furnished electronically to the Contracting Officer SrA Bjoern Kirkemo by email at bjoern.kirkemo@us.af.mil&nbsp; no later than 11:00 a.m., JST on 26 Feb 2025.</p>\\n\"}",
+    "attachments": 1,
+    "downloadedFiles": [
+      "Intent to Sole Source Joint Range Extension (JRE) Help Desk Support_bfec187739f34ebf983fbeff9ee6ef59_doc1.pdf"
+    ],
+    "is_sole_source": true,
+    "awardee": "Science Applications International Corporation (SAIC)"
+  },
+  {
+    "title": "Health and Life Insurance for U.S Embassy Employees and their Dependents in Doha, Qatar 19QA1024R0014",
+    "noticeId": "bf40dca2c25c4c638e7be735fdecf250",
+    "postedDate": "2025-02-18",
+    "office": "STATE, DEPARTMENT OF.STATE, DEPARTMENT OF.US EMBASSY DOHA",
+    "description": "{\"description\":\"<p>The purpose of this amendment is to extend the proposal submission date on or before 09:00 a.m. (local time) March 10, 2025.</p>\\n\"}",
+    "attachments": 1,
+    "downloadedFiles": [
+      "Health and Life Insurance for U.S Embassy Employees and their Dependents in Doha, Qatar 19QA1024R0014_bf40dca2c25c4c638e7be735fdecf250_doc1.pdf"
+    ],
+    "is_sole_source": false,
+    "awardee": null
   }
+]
         ];
+
+        function stripHtmlTags(html) {
+            const tmp = document.createElement('div');
+            tmp.innerHTML = html;
+            return tmp.textContent || tmp.innerText || '';
+        }
+
+        function truncateDescription(desc, maxLength = 250) {
+            if (desc.length <= maxLength) return desc;
+            return desc.substring(0, maxLength) + '...';
+        }
 
         function renderTable(data) {
             const tbody = document.getElementById('tableBody');
             tbody.innerHTML = '';
             
+            // Sort data - sole source items first
+            data.sort((a, b) => {
+                if (a.is_sole_source && !b.is_sole_source) return -1;
+                if (!a.is_sole_source && b.is_sole_source) return 1;
+                // Secondary sort by date (newest first)
+                return new Date(b.postedDate) - new Date(a.postedDate);
+            });
+            
             data.forEach(notice => {
                 const row = document.createElement('tr');
+                if (notice.is_sole_source) {
+                    row.classList.add('sole-source-yes');
+                }
                 
-                // Parse the description JSON if it's a string
+                // Parse and process the description
                 let descriptionText = '';
                 try {
                     const descObj = typeof notice.description === 'string' 
                         ? JSON.parse(notice.description) 
                         : notice.description;
-                    descriptionText = descObj.description;
+                    
+                    // Remove HTML tags and truncate
+                    const plainDesc = stripHtmlTags(descObj.description);
+                    const truncatedDesc = truncateDescription(plainDesc);
+                    
+                    // Create a full description for the modal/tooltip
+                    descriptionText = `
+                        <div>${truncatedDesc}</div>
+                        ${plainDesc.length > 250 ? 
+                            `<span class="read-more" data-full="${encodeURIComponent(plainDesc)}">Read more</span>` : ''}
+                    `;
                 } catch (e) {
-                    descriptionText = notice.description;
+                    descriptionText = truncateDescription(String(notice.description));
                 }
 
                 row.innerHTML = `
-                    <td>${notice.title}</td>
+                    <td>
+                        ${notice.title}
+                        ${notice.is_sole_source ? '<span class="tag tag-sole-source">Sole Source</span>' : ''}
+                    </td>
                     <td>${notice.noticeId}</td>
                     <td>${dayjs(notice.postedDate).format('MMM D, YYYY')}</td>
                     <td>${notice.office}</td>
                     <td class="description">${descriptionText}</td>
+                    <td>${notice.is_sole_source ? 'Yes' : 'No'}</td>
+                    <td class="awardee">${notice.awardee || '-'}</td>
                     <td>${notice.downloadedFiles.map(file => 
-                        `<a href="files/${file}" class="file-link">${file}</a><br>`
+                        `<a href="files/${file}" class="file-link" target="_blank">${file}</a><br>`
                     ).join('')}</td>
                 `;
                 
                 tbody.appendChild(row);
             });
+
+            // Add click handlers for "Read more" links
+            document.querySelectorAll('.read-more').forEach(link => {
+                link.addEventListener('click', function() {
+                    const fullText = decodeURIComponent(this.dataset.full);
+                    alert(fullText); // Simple approach - could be improved with a modal
+                });
+            });
         }
 
-        // Search functionality
-        document.getElementById('searchInput').addEventListener('input', (e) => {
-            const searchTerm = e.target.value.toLowerCase();
-            const filteredData = notices.filter(notice => 
-                notice.title.toLowerCase().includes(searchTerm) ||
-                notice.noticeId.toLowerCase().includes(searchTerm) ||
-                notice.office.toLowerCase().includes(searchTerm)
-            );
-            renderTable(filteredData);
+        // Search and filter functionality
+        function filterData() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const onlySoleSource = document.getElementById('soleSourceFilter').checked;
+            
+            return notices.filter(notice => {
+                // Filter by sole source if checkbox is checked
+                if (onlySoleSource && !notice.is_sole_source) return false;
+                
+                // Filter by search term
+                return notice.title.toLowerCase().includes(searchTerm) ||
+                       notice.noticeId.toLowerCase().includes(searchTerm) ||
+                       notice.office.toLowerCase().includes(searchTerm) ||
+                       (notice.awardee && notice.awardee.toLowerCase().includes(searchTerm));
+            });
+        }
+
+        // Attach event listeners
+        document.getElementById('searchInput').addEventListener('input', () => {
+            renderTable(filterData());
+        });
+        
+        document.getElementById('soleSourceFilter').addEventListener('change', () => {
+            renderTable(filterData());
         });
 
         // Initial render
