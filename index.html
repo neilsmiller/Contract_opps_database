@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contract Notices Database</title>
+    <title>Sole Source Spotter</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.10/dayjs.min.js"></script>
     <style>
         body {
@@ -95,11 +95,47 @@
             background-color: #ffeeba;
             color: #856404;
         }
+        .intro-text {
+    margin-bottom: 25px;
+    border-left: 4px solid #0366d6;
+    padding-left: 15px;
+        }
+.external-link {
+    color: #0366d6;
+    text-decoration: none;
+    border-bottom: 1px dotted #0366d6;
+        }
+.external-link:hover {
+    text-decoration: none;
+    border-bottom: 1px solid #0366d6;
+        } 
+.important-notice {
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin-top: 15px;
+    border-left: 4px solid #ffc107;
+        }
     </style>
 </head>
 <body>
-    <h1>Contract Notices Database</h1>
+    <h1>Sole Source Spotter</h1>
+
+<div class="intro-text">
+    <p>Welcome to the Sole Source Spotter. This site provides a regularly updated view of Federal contracting notices posted on SAM.gov, and highlights notices of intent to sole source.</p>
+
+    <h2>What are sole source contracts?</h2>
+    <p>In federal contracting, "sole source" procurement allows agencies to award contracts directly to a specific vendor without competitive bidding when they determine only one source can meet their requirements. The process begins when an agency identifies such a need and publishes a "Notice of Intent to Sole Source" on SAM.gov, explaining their justification and naming the intended vendor. Other companies then have a brief window (typically 10-15 days) to submit "capability statements" proving they could also fulfill the requirements. If no credible alternatives emerge, the agency proceeds with the sole source award; if viable alternatives are identified, they may convert to a competitive process.</p>
+
+    <p>Notices on pending sole source awards are tucked away behind the SAM.gov login page, and require you to navigate through a free-text search and manually download attachments. The Sole Source Spotter makes these public documents truly transparent, so that potential vendors and all Americans have a heads-up <i>before</i> a sole source award is made. To learn more, check out <a href="https://www.loom.com/share/300771215ebe493fb1905ddd19c16d5a?_hsenc=p2ANqtz-8twOk-yXZ0fWkSUncn4Ns6pjGXqIPiSs40ZPtRe7eWrzmMjGlMohLESpwY8muQQJlSPuzMcWnDhXT4TioSFH9gVXsIsA&_hsmi=308497819&utm_content=308497819&utm_medium=github&utm_source=githubio" class="external-link">this brief video</a>.</p>
     
+    <p>This page is maintained by Neil Miller. Feel free to message him <a href="https://www.linkedin.com/in/neil-s-miller/" class="external-link">here</a> with any suggestions or corrections.</p>
+    
+</div>
+
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search notices...">
+</div>
     <div class="search-container">
         <input type="text" id="searchInput" placeholder="Search notices...">
     </div>
