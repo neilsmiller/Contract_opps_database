@@ -1,0 +1,358 @@
+-
+*** LTC PID Packaging Consolidated Text ***
+-
+PLEASE SEE GLOSSARY AT THE END OF THE DOCUMENT FOR FULL TEXT OF THE ITEM DESCRIPTION
+AND PACKAGING REFERENCE NUMBERS CALLED OUT FOR EACH NSN.
+
+NSN:014759355
+
+     REFERENCE NUMBER:RA001
+
+     BATTERY, STORAGE
+     LEAD ACID,SEALED SHELF LIFE TYPE I, 24 MONTHS
+
+     REFERENCE NUMBER:RS016
+
+     REFERENCE NUMBER:RP001
+
+     REFERENCE NUMBER:RQ011
+
+     REFERENCE NUMBER:ZD080
+
+     REFERENCE NUMBER:ZD025
+
+     REFERENCE NUMBER:RQ017
+
+     REFERENCE NUMBER:CA071
+
+     REFERENCE NUMBER:RQ034
+
+     REFERENCE NUMBER:RD003
+
+     MIL-STD-129P(4) REQUIRED
+
+     CRITICAL APPLICATION ITEM
+
+     JOHNSON CONTROLS INC 25244 P/N 816 253 000 888 2
+     CLARIOS, LLC 0UJ55 P/N 8016-103
+
+
+     PREP FOR DELIVERY
+
+     LINE ITEM 00001 TYPE OF COVERAGE: DLA DIRECT, CONUS
+
+     PKGING DATA - MIL-STD-2073-1E
+     QUP:001  PRES MTHD:ZZ  CLNG/DRY:1  PRESV MAT:00
+     WRAP MAT:FA  CUSH/DUNN MAT:GA  CUSH/DUNN THKNESS:Z
+     UNIT CONT:E5  OPI:M
+     INTRMDTE CONT:ZZ  INTRMDTE CONT QTY:000
+     PACK CODE:U
+     MARKING SHALL BE IN ACCORDANCE WITH MIL-STD-129.
+     SPECIAL MARKING CODE:32 -32 Type I, shelf life
+
+     PALLETIZATION SHALL BE IN ACCORDANCE WITH RP001: DLA PACKAGING
+      REQUIREMENTS FOR PROCUREMENT
+
+     32 Type I, shelf life
+
+     Land Transport (ADR/RID) # The product fulfills the requirements of
+     Special Provision 188 of ADR/RID and is therefore, keeping within the
+     prescribed quantity limits, excepted from the application of the
+     Dangerous Goods regulations.
+     Sea Transport (IMDG) - The product fulfills the requirements of Special
+     Provision 188 of IMDG-Code and is therefore, keeping within the
+     prescribed quantity limits, excepted from the application of the
+     Dangerous Goods regulations.
+     Air Transport (IATA) - The product fulfills the requirements of Special
+     Provision A45 of IATA-DGR and is therefore, keeping within the
+     prescribed quantity limits, excepted from the application of the
+     Dangerous Goods regulations.
+     "Per U.S. DOT:
+
+     If battery meets non-spillable criteria listed in 49 CFR § 173.159(f)
+     and 173.159a(d)(1).
+     Non-spillable batteries are excepted from 49 CFR Subchapter C
+     requirements, provided that the following criteria are met:
+     1. The batteries must be securely packed in strong outer packaging and
+     meet the requirements of 49 CFR § 173.159a.
+     2. The batteries' terminals must be protected against short circuit.
+     3. Each battery and their outer packaging must be plainly and durably
+     marked ""NON-SPILLABLE"" or ""NON-SPILLABLE BATTERY"".
+     The exception from 49 CFR, Subchapter C means shipping papers need not
+     show proper shipping name, hazard class, UN number, and packing group
+     and hazardous labels are not required when transporting a non-spillable
+     battery."
+
+     Any battery weighing over 75 pounds shall have Die cut holes on both
+     ends of boxes to grasp batt. handles.
+
+
+
+
+
+NSN:015024973
+
+     BATTERY,STORAGE
+     REFERENCE NUMBER:RP001
+
+     REFERENCE NUMBER:RA001
+
+     REFERENCE NUMBER:RQ011
+
+     SEALED,LEAD ACID
+
+     REFERENCE NUMBER:ZD080
+
+     REFERENCE NUMBER:ZD072
+     SHELF LIFE: TYPE 1, 24 MONTHS
+
+
+     MSDS/PSDS REQUIRED PER FED-STD-313
+
+     MIL-STD-130N(1) REQUIRED
+
+     MIL-STD-129P(4) REQUIRED.
+
+     SHIPPING NAME: NON SPILLABLE BATTERY
+     ASSURE CONFORMANCE WITH 49CFR173.159(D)
+     IF NON SPILLABLE.
+
+     REFERENCE NUMBER:A0003
+
+     REFERENCE NUMBER:CA071
+
+     REFERENCE NUMBER:ZD025
+
+     REFERENCE NUMBER:RS016
+
+     J. BLACKWOOD  SON PTY LTD ZD484 P/N 0231 8196
+     FINNING UK LTD U8468 P/N 100009265
+     Mbda Uk Limited DBA Mbda Uk Ltd K0967 P/N 14410048192
+     CLARIOS, LLC 0UJ55 P/N 8051-160
+     OPTIMA BATTERIES KC1C9 P/N 851 187 000 888 2
+     GUINAULT-LEBRUN B7866 P/N BTBT00440
+     GUINAULT SA DBA F2534 P/N BTBT00440
+     OPTIMA BATTERIES KC1C9 P/N OPTIMA YTS 5.5
+     UNAC F8357 P/N UNXE001
+
+
+     PREP FOR DELIVERY
+
+     LINE ITEM 00002 TYPE OF COVERAGE: DLA DIRECT, CONUS
+
+     PKGING DATA - MIL-STD-2073-1E
+     QUP:001  PRES MTHD:ZZ  CLNG/DRY:1  PRESV MAT:00
+     WRAP MAT:ZZ  CUSH/DUNN MAT:JC  CUSH/DUNN THKNESS:D
+     UNIT CONT:E5  OPI:M
+     PACK CODE:U
+     MARKING SHALL BE IN ACCORDANCE WITH MIL-STD-129.
+     SPECIAL MARKING CODE:32 -32 Type I, shelf life
+
+     PALLETIZATION SHALL BE IN ACCORDANCE WITH RP001: DLA PACKAGING
+      REQUIREMENTS FOR PROCUREMENT
+
+     32 Type I, shelf life
+     Land Transport (ADR/RID) # The product fulfills the requirements of
+     Special Provision 188 of ADR/RID and is therefore, keeping within the
+     prescribed quantity limits, excepted from the application of the
+     Dangerous Goods regulations.
+     Sea Transport (IMDG) - The product fulfills the requirements of Special
+     Provision 188 of IMDG-Code and is therefore, keeping within the
+     prescribed quantity limits, excepted from the application of the
+     Dangerous Goods regulations.
+     Air Transport (IATA) - The product fulfills the requirements of Special
+     Provision A45 of IATA-DGR and is therefore, keeping within the
+     prescribed quantity limits, excepted from the application of the
+     Dangerous Goods regulations.
+     "Per U.S. DOT:
+
+     If battery meets non-spillable criteria listed in 49 CFR § 173.159(f)
+     and 173.159a(d)(1).
+     Non-spillable batteries are excepted from 49 CFR Subchapter C
+     requirements, provided that the following criteria are met:
+     1. The batteries must be securely packed in strong outer packaging and
+     meet the requirements of 49 CFR § 173.159a.
+     2. The batteries' terminals must be protected against short circuit.
+     3. Each battery and their outer packaging must be plainly and durably
+     marked ""NON-SPILLABLE"" or ""NON-SPILLABLE BATTERY"".
+     The exception from 49 CFR, Subchapter C means shipping papers need not
+     show proper shipping name, hazard class, UN number, and packing group
+     and hazardous labels are not required when transporting a non-spillable
+     battery."
+
+     Any battery weighing over 75 pounds shall have Die cut holes on both
+     ends of boxes to grasp batt. handles.
+
+
+     REFERENCE NUMBER:IP025 OBJECT TEXT ID ST LANGUAGE E
+
+************************************************************************************************************
+
+                                                    GLOSSARY
+
+************************************************************************************************************
+PACKAGING TEXT
+
+THE FOLLOWING PARAGRAPH APPLIES TO ALL PACKAGING CALLED OUT IN THIS DOCUMENT:
+ITEM DESCRIPTION TEXT
+
+
+     REFERENCE NUMBER RA001
+
+     RA001: THIS DOCUMENT INCORPORATES TECHNICAL AND/OR QUALITY REQUIREMENTS
+     (IDENTIFIED BY AN 'R' OR AN 'I' NUMBER) SET FORTH IN FULL TEXT IN THE
+     DLA MASTER LIST OF TECHNICAL AND QUALITY REQUIREMENTS FOUND ON THE WEB
+     AT:
+
+     http://www.dla.mil/HQ/Acquisition/Offers/eProcurement.aspx
+
+     FOR SIMPLIFIED ACQUISITIONS, THE REVISION OF THE MASTER IN EFFECT ON THE
+     SOLICITATION ISSUE DATE OR THE AWARD DATE CONTROLS.  FOR LARGE
+     ACQUISITIONS, THE REVISION OF THE MASTER IN EFFECT ON THE RFP ISSUE DATE
+     APPLIES UNLESS A SOLICITATION AMENDMENT INCORPORATES A FOLLOW-ON
+     REVISION, IN WHICH CASE THE AMENDMENT DATE CONTROLS.
+
+
+
+
+
+     REFERENCE NUMBER RS016
+
+     RS016: Shelf-life requirement RS001 for a TYPE I (CODE M) item with a
+     shelf life of 24 months (non-extendable) applies to this item.
+
+
+
+     REFERENCE NUMBER RP001
+
+     RP001: DLA PACKAGING REQUIREMENTS FOR PROCUREMENT
+
+
+
+
+     REFERENCE NUMBER RQ011
+
+     RQ011: REMOVAL OF GOVERNMENT IDENTIFICATION FROM NON-ACCEPTED SUPPLIES
+
+
+
+     REFERENCE NUMBER ZD080
+
+
+     SAMPLING:
+     THE SAMPLING METHOD SHALL BE IN ACCORDANCE WITH MIL-STD-1916 OR ASQ
+     H1331, TABLE 1 OR A COMPARABLE ZERO BASED SAMPLING PLAN UNLESS OTHERWISE
+     SPECIFIED BY THE CONTRACT. IF THE APPLICABLE DRAWING, SPECIFICATION,
+     STANDARD, OR QUALITY ASSURANCE PROVISION (QAP) SPECIFIES CRITICAL, MAJOR
+     AND/OR MINOR ATTRIBUTES, THEY SHALL BE ASSIGNED VERIFICAITON LEVELS OF
+     VII, IV AND II OR AQLS OF 0.1, 1.0 AND 4.0 RESPECTIVELY. UNSPECIFIED
+     ATTRIBUTES SHALL BE CONSIDERED AS MAJOR UNLESS SAMPLING PLANS ARE
+     SPECIFIED IN APPLICABLE DOCUMENTS. FOR MIL-STD-1916, THE MANUFACTURER
+     MAY USE THE ATTRIBUTE OR VARIABLE INSPECTION METHOD AT THEIR OPTION OR
+     PER THE CONTRACT. MIL-STD-105/ASQ Z1.4 MAY BE USED TO SET SAMPLE LOT
+     SIZE, BUT ACCEPTANCE WOULD BE ZERO NON-CONFORMANCES IN THE SAMPLE LOT
+     UNLESS OTHERWISE SPECIFIED IN THE CONTRACT.
+
+
+     REFERENCE NUMBER ZD025
+
+     MERCURY OR MERCURY CONTAINING COMPOUNDS SHALL
+     NOT BE INTENTIONALLY ADDED TO<(>,<)> OR COME IN DIRECT
+     CONTACT WITH<(>,<)> ANY HARDWARE OR SUPPLIES FURNISHED
+     UNDER THIS CONTRACT. EXCEPTION: FUNCTIONAL MERCURY
+     USED IN BATTERIES, FLUORESCENT LIGHTS, REQUIRED
+     INSTRUMENTS; SENSORS OR CONTROLS; WEAPON SYSTEMS;
+     AND CHEMICAL ANALYSIS REAGENTS SPECIFIED BY NAVSEA.
+     PORTABLE FLUORESCENT LAMPS AND PORTABLE INSTRUMENTS
+     CONTAINING MERCURY SHALL BE SHOCK PROOF AND CONTAIN
+     A SECOND BOUNDARY OF CONTAINMENT OF THE MERCURY OR
+     MERCURY COMPOUND. (IAW NAVSEA 5100-003D).
+
+
+     REFERENCE NUMBER RQ017
+
+     RQ017: PHYSICAL INDENTIFICATION/BARE ITEM MARKING
+
+
+
+
+     REFERENCE NUMBER CA071
+
+     COMMERCIAL OFF THE SHELF ITEM. ADEQUATE CATALOG
+     DATA IS AVAILABLE AT THE PROCUREMENT AGENCY TO
+     EVALUATE ALTERNATE OFFERS.
+
+
+     REFERENCE NUMBER RQ034
+
+     RQ034: HAZARDOUS COMMUNICATION STANDARD NOTICE
+
+
+     REFERENCE NUMBER RD003
+
+
+     RD003, COVERED DEFENSE INFORMATION POTENTIALLY APPLIES
+
+
+
+
+     REFERENCE NUMBER ZD072
+
+     Hazard Communication Standard Notice:
+
+     Effective June 1, 2015, Federal Standard No. 313-E, Material Safety
+     Data, Transportation Data and Disposal Data for Hazardous Materials
+     Furnished to Government Activities, establishes the requirement for
+     preparation and submission of Safety Data Sheets (SDS) in lieu of
+     Material Safety Data Sheets (MSDS) by suppliers who provide hazardous
+     materials to government activities.
+
+     The Occupational Safety and Health Administration (OSHA) has modified
+     its Hazard Communication Standard (HCS) to conform to the United Nations
+     Globally Harmonized System of Classification and Labeling of Chemicals.
+      As a result of this change, GSA revised Federal Standard No. 313-E
+     requiring Safety Data Sheets for classifying chemicals and communicating
+     the applicable information on labels.
+
+     In accordance with the revised standard after June 1, 2015:
+
+     1. Suppliers will be required to submit, to the contracting officer for
+     review and approval prior to award, safety data sheets consistent with
+     the requirements found at 29 C.F.R.  1910.1200 for hazardous materials
+     delivered to the Government.
+
+     2. Suppliers will also be required to submit, to the contracting officer
+     for review and approval prior to award, Hazardous Communication Standard
+     (HCS) labels in accordance with 29 C.F.R. 1910.1200 requirements or
+     current Consumer Product Safety Act (CPSA), Federal Hazardous Substance
+     Act (FHSA) labels when subject to labeling requirements under those
+     statutes. This product labeling is required for hazardous materials
+     delivered to the Government.
+
+     3. Finally, suppliers must train their employees on the new safety data
+     sheets, hazardous communication labels, and requirements of 29 C.F.R.
+     1910.1200.
+
+     For more information on SDS, refer to OSHAs website, available at:
+
+     https://www.osha.gov/law-regs.html
+
+     For information on 29 C.F.R. 1910.1200, refer to the below link:
+
+     https://www.osha.gov/dsg/hazcom/index.html
+
+
+     REFERENCE NUMBER A0003
+
+     MIL-STD-130N(1) DATED 16 NOV 2012.
+     IDENTIFICATION MARKING OF U.S. MILITARY PROPERTY
+
+
+
+
+     REFERENCE NUMBER IP025
+
+     IP025: PACKAGING, MARKING, AND SHIPPING OF HAZARDOUS MATERIALS
+
+
+
